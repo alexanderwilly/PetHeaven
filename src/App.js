@@ -1,9 +1,7 @@
-import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import GuestPage from './view/guest/GuestPage';
 
 function App() {
-  console.log('App.js');
   return (
     <>
       <Router>
