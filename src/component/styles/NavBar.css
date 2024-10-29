@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: #FFC300;
+}
+
+.nav-icon{
+    width: 125px;
+}
+
+.top-nav{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a, .navbar button{
+    text-decoration: none;
+    color: #001d3d;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: 24px;
+    transition: all 0.5s ease;
+}
+
+.navbar > img{
+    width: 85px;
+    
+}
+
+.top-nav button{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #c2272d;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.top-nav img{
+    width: 50px;
+}
+
+.bars-icon{
+    display: none;
+}
+
+
+.navbar a:hover{
+    
+    color: #001d3d;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    background-color: #FFC300;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+    animation: slide-down 0.5s ease;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.sidebar-link a{
+    color: #001d3d;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.close-icon img{
+    width: 35px;
+    position: fixed;
+    margin: 50px;
+    top:0;
+    right: 0;
+}
+
+@media (max-width: 1024px){
+    .top-nav-link{
+        display: none;
+    }
+
+    .bars-icon{
+        display: flex;
+    }
+
+}
+
+
+@media (max-width: 420px){
+    .sidebar-link a{
+        font-size: 1.5rem;
+    }
+}
