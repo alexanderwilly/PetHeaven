@@ -7,7 +7,7 @@ function App() {
       <Router>
         <div className='container'>
           <Routes>
-            <Route path='/' element={<GuestPage />} />
+            <Route path='/PetHeaven' element={<GuestPage />} />
           </Routes>
         </div>
       </Router>

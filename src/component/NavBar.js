@@ -31,21 +31,21 @@ const NavBar = () => {
                         <img src = {cross_icon} alt = "cross_icon" />
                     </span>
                 </li>
-                <li className="sidebar-link"><Link to = "/">HOME</Link></li>
-                <li className="sidebar-link"><Link to = "/about-us">ABOUT US</Link></li>
-                <li className="sidebar-link"><Link to = "/our-services">OUR SERVICES</Link></li>
-                <li className="sidebar-link"><Link to = "/volunteer">VOLUNTEER</Link></li>
-                <li className="sidebar-link"><Link to = "/donate">DONATE</Link></li>
-                <li className="sidebar-link"><Link to = "/contact-us">CONTACT US</Link></li>
+                <li className="sidebar-link"><Link to = "/PetHeaven">HOME</Link></li>
+                <li className="sidebar-link"><Link to = "/PetHeaven/about-us">ABOUT US</Link></li>
+                <li className="sidebar-link"><Link to = "/PetHeaven/our-services">OUR SERVICES</Link></li>
+                <li className="sidebar-link"><Link to = "/PetHeaven/volunteer">VOLUNTEER</Link></li>
+                <li className="sidebar-link"><Link to = "/PetHeaven/donate">DONATE</Link></li>
+                <li className="sidebar-link"><Link to = "/PetHeaven/contact-us">CONTACT US</Link></li>
                 
             </ul>
             <ul className = "top-nav">
-                <li className = "top-nav-link"><Link to = "/">HOME</Link></li>
-                <li className = "top-nav-link"><Link to = "/about-us">ABOUT US</Link></li>
-                <li className = "top-nav-link"><Link to = "/our-services">OUR SERVICES</Link></li>
-                <li className = "top-nav-link"><Link to = "/volunteer">VOLUNTEER</Link></li>
-                <li className = "top-nav-link"><Link to = "/donate">DONATE</Link></li>
-                <li className = "top-nav-link"><Link to = "/contact-us">CONTACT US</Link></li>
+                <li className = "top-nav-link"><Link to = "/PetHeaven">HOME</Link></li>
+                <li className = "top-nav-link"><Link to = "/PetHeaven/about-us">ABOUT US</Link></li>
+                <li className = "top-nav-link"><Link to = "/PetHeaven/our-services">OUR SERVICES</Link></li>
+                <li className = "top-nav-link"><Link to = "/PetHeaven/volunteer">VOLUNTEER</Link></li>
+                <li className = "top-nav-link"><Link to = "/PetHeaven/donate">DONATE</Link></li>
+                <li className = "top-nav-link"><Link to = "/PetHeaven/contact-us">CONTACT US</Link></li>
                 <li>
                     <button id ="login-btn" className = "btn">LOGIN</button>
                 </li>
