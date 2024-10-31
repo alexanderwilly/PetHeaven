@@ -15,7 +15,7 @@ import './styles/GuestPage.css';
 
 const GuestPage = () =>{
 
-    const [animalsArray, setAnimalsArray] = useState([]);
+    const [animalsArray, setAnimalsArray] = useState(null);
     
     const displayAnimals = async () =>{
         try{
@@ -81,14 +81,22 @@ const GuestPage = () =>{
                 <div className="animals-container">
                     
                         {
-                            animalsArray.map((animal, index) => {
-                                return (
-                                    <div key={index} className="item">
-                                        <img src={animal.image} alt={animal.name} />
-                                        <span>{animal.name}</span>
-                                    </div>
-                                );
-                            })
+                            animalsArray === null ? <h1>Loading...</h1> : 
+                            (
+                                animalsArray.length > 0 ? 
+                                animalsArray.map((animal, index) => {
+                                    return (
+                                        <div key={index} className="item">
+                                            <img src={animal.image} alt={animal.name} />
+                                            <span>{animal.name}</span>
+                                        </div>
+                                    );
+                                })
+                                : <h1>No animals available for adoption</h1>
+                            )
+                                
+                            
+                            
                         }
                     
                 </div>
