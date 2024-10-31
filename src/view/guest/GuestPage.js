@@ -76,6 +76,7 @@ const GuestPage = () =>{
                 </div>
             </section>
 
+
             <section id = "animals-adoption">
                 <h2>Available for Adoption</h2>
                 <div className="animals-container">
