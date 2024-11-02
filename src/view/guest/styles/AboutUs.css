@@ -91,3 +91,54 @@
 .vision-mission-content div img{
     width: 75px;
 }
+
+
+
+@media (max-width: 1024px){
+    #who-we-are{
+        margin-top: 8vh;
+    }
+}
+
+@media (max-width:853px){
+    .who-we-are-content {
+        flex-direction: column;
+    }
+
+    .who-we-are-content img {
+        margin-right: 0;
+    }
+    
+    .who-we-are-content p {
+        width: 75%;
+        margin-left: 0;
+        margin-top: 24px;
+        text-align: center;
+    }
+
+    .vision-mission-content{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .vision-mission-content div{
+        width: 75%;
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
+}
+
+@media (max-width:540px){
+    
+    .who-we-are-content img {
+        margin-right: 0;
+        width: 75%;
+    }
+
+
+}
+
+@media (max-width: 420px){
+    
+}
