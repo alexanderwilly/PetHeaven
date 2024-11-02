@@ -1,0 +1,93 @@
+/* Who We Are */
+#who-we-are{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 16vh;
+    margin-bottom: 8vh;
+}
+
+#who-we-are h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #003566;
+}
+
+.who-we-are-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.who-we-are-content img {
+    width: 450px;
+    border-radius: 10px;
+    margin-right: 36px;
+}
+
+.who-we-are-content p {
+    font-size: 16px;
+    width: 35%;
+    margin-left: 36px;
+    color: #001d3d;
+}
+
+/* Vision Mission */
+#vision-mission{
+    width: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#vision-mission h2{
+    font-size: 40px;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    color: #003566;
+}
+
+.vision-mission-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 48px;
+}
+
+
+.vision-mission-content div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    margin-bottom: 4vh;
+    background-color: white;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vision-mission-content div h3{
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #003566;
+    font-weight: 400;
+}
+
+.vision-mission-content div p{
+    font-size: 16px;
+    text-align: center;
+    color: #001d3d;
+}
+
+.vision-mission-content div img{
+    width: 75px;
+}
