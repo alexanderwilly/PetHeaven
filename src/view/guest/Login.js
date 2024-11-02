@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import LoginLogoutController from '../../controller/LoginLogoutController';
@@ -9,6 +9,7 @@ import './styles/Login.css';
 const Login = () => {
 
     const [member, setMember] = React.useState(null);
+    const navigate = useNavigate();
 
     const login = async (e) => {
         try{
@@ -30,7 +31,7 @@ const Login = () => {
             if(member){
                 toast.success("Login Successful");
                 setTimeout(() => {
-                    window.location.href = "/PetHeaven";
+                    navigate("/PetHeaven");
                 }, 750);
             }
         }

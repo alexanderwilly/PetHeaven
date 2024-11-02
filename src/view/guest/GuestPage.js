@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import NavBar from '../../component/NavBar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import hero from '../../media/hero.jpg';
@@ -21,6 +21,8 @@ const GuestPage = () =>{
 
     const [animalsArray, setAnimalsArray] = useState(null);
     const [member, setMember] = useState(undefined);
+
+    const navigate = useNavigate();
     
     const displayAnimals = async () =>{
         try{
@@ -44,7 +46,7 @@ const GuestPage = () =>{
             toast.success("You are already signed in");
             return;
         }else{
-            window.location.href = "/PetHeaven/login";
+            navigate("/PetHeaven/login");
         }
     }
 
