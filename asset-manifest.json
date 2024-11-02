@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PetHeaven/static/css/main.79201584.css",
-    "main.js": "/PetHeaven/static/js/main.2a3e180f.js",
+    "main.js": "/PetHeaven/static/js/main.c162a0f0.js",
     "static/js/453.7780256c.chunk.js": "/PetHeaven/static/js/453.7780256c.chunk.js",
     "static/media/about_us.png": "/PetHeaven/static/media/about_us.d60294f1ad0fcc8ce7f6.png",
     "static/media/join-us.jpg": "/PetHeaven/static/media/join-us.d5b425f22536e5092ad7.jpg",
@@ -14,11 +14,11 @@
     "static/media/cross_icon.png": "/PetHeaven/static/media/cross_icon.ebbe80983e5bb7ed2ef5.png",
     "index.html": "/PetHeaven/index.html",
     "main.79201584.css.map": "/PetHeaven/static/css/main.79201584.css.map",
-    "main.2a3e180f.js.map": "/PetHeaven/static/js/main.2a3e180f.js.map",
+    "main.c162a0f0.js.map": "/PetHeaven/static/js/main.c162a0f0.js.map",
     "453.7780256c.chunk.js.map": "/PetHeaven/static/js/453.7780256c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.79201584.css",
-    "static/js/main.2a3e180f.js"
+    "static/js/main.c162a0f0.js"
   ]
 }
