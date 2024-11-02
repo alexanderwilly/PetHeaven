@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/PetHeaven/static/css/main.8a7c1574.css",
-    "main.js": "/PetHeaven/static/js/main.39c2a6f2.js",
+    "main.css": "/PetHeaven/static/css/main.79201584.css",
+    "main.js": "/PetHeaven/static/js/main.2a3e180f.js",
     "static/js/453.7780256c.chunk.js": "/PetHeaven/static/js/453.7780256c.chunk.js",
+    "static/media/about_us.png": "/PetHeaven/static/media/about_us.d60294f1ad0fcc8ce7f6.png",
+    "static/media/join-us.jpg": "/PetHeaven/static/media/join-us.d5b425f22536e5092ad7.jpg",
     "static/media/logo.png": "/PetHeaven/static/media/logo.dc4ea7bf7e9c77e50c5f.png",
     "static/media/hero.jpg": "/PetHeaven/static/media/hero.cf1b4d3740b25d1ff1ef.jpg",
     "static/media/volunteer.png": "/PetHeaven/static/media/volunteer.e2a20065ceaf6c4a9b64.png",
     "static/media/adopt.png": "/PetHeaven/static/media/adopt.7cb33c87a5b3483d9b6c.png",
+    "static/media/mission.png": "/PetHeaven/static/media/mission.00e84b7eba15016c9c19.png",
+    "static/media/vision.png": "/PetHeaven/static/media/vision.cc4ed2331d49479e0ce7.png",
     "static/media/cross_icon.png": "/PetHeaven/static/media/cross_icon.ebbe80983e5bb7ed2ef5.png",
     "index.html": "/PetHeaven/index.html",
-    "main.8a7c1574.css.map": "/PetHeaven/static/css/main.8a7c1574.css.map",
-    "main.39c2a6f2.js.map": "/PetHeaven/static/js/main.39c2a6f2.js.map",
+    "main.79201584.css.map": "/PetHeaven/static/css/main.79201584.css.map",
+    "main.2a3e180f.js.map": "/PetHeaven/static/js/main.2a3e180f.js.map",
     "453.7780256c.chunk.js.map": "/PetHeaven/static/js/453.7780256c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a7c1574.css",
-    "static/js/main.39c2a6f2.js"
+    "static/css/main.79201584.css",
+    "static/js/main.2a3e180f.js"
   ]
 }
