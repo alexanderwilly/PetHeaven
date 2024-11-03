@@ -159,8 +159,10 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
+    
+    gap: 2rem;
+    height: 125vh;
+    width: 85%;
 }
 
 .item{
@@ -265,6 +267,13 @@ footer{
     padding: 1rem 5rem;
 }
 
+@media (max-width: 1325px){
+    .animals-container{
+        gap: 1.5rem;
+        height: auto;
+    }
+}
+
 @media (max-width: 1024px){
     #hero{
         flex-direction: column-reverse;
@@ -289,6 +298,10 @@ footer{
         margin-bottom: 5vh;
     }
 
+    .cards-container{
+        width: 85%;
+    }
+
     #join-us {
         flex-direction: column;
         padding: 5vh 0;
@@ -306,6 +319,14 @@ footer{
         width: 100%;
         height:100%;
     }
+
+    .animals-container{
+        width: 100%;
+        gap: 1rem;
+        height: auto;
+    }
+
+    
     
 
 }

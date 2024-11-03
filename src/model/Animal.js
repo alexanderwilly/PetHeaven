@@ -53,8 +53,9 @@ class Animal{
             throw new Error(e);
         }
     }
+
     
-    async getAnimals(){
+    async getAnimals(isHome){
         try{
             const q = await getDocs(collection(db, 'animals'));
             const animals = [];
@@ -71,7 +72,11 @@ class Animal{
                 animal.image = await this.getPicture(doc.data().image);
                 animals.push(animal);
 
-                if(animals.length >= 6) break;
+                if(isHome){
+                    if(animals.length === 6){
+                        break;
+                    }
+                }
             }
             return animals;
         }catch(e){

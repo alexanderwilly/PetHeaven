@@ -1,0 +1,88 @@
+/* Contact */
+#contact-us-page{
+    background-color: #fffceb;
+}
+
+#contact-us-container{
+    padding-top: 14vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+
+#contact-us-container{
+    flex-direction: column; 
+    justify-content: center;   
+    align-items: center;
+    padding-bottom: 8vh;
+}
+
+#contact-us-container h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #003566;
+    text-align: center;
+    
+}
+
+#contact-us-container form{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-us-container > form > label{
+    font-size: 1.5rem;
+    color: #001d3d;
+    font-weight: bold;
+}
+
+#contact-us-container input{
+    width: 50%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#contact-us-container textarea{
+    width: 75%;
+    height: 150px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#contact-us-container button{
+    text-decoration: none;
+    margin-top: 48px;
+    padding: 16px 32px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #000814;
+    background-color: #ffc300;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 256px;
+}
+
+@media (max-width:853px){
+
+    #contact-us-container form{
+        width: 90%;
+    }
+
+    #contact-us-container input{
+        width: 75%;
+    }
+
+    #contact-us-container textarea{
+        width: 100%;
+    }    
+}

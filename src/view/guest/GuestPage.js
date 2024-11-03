@@ -26,7 +26,7 @@ const GuestPage = () =>{
     
     const displayAnimals = async () =>{
         try{
-            await new DisplayAnimalsController({changeAnimalsArray: setAnimalsArray}).getAnimals();
+            await new DisplayAnimalsController({changeAnimalsArray: setAnimalsArray}).getAnimalsHome();
         }catch(e){
             toast.error(e.message);
         }
@@ -123,7 +123,7 @@ const GuestPage = () =>{
                             
                         }
                 </div>
-                <Link className = "view-button" to = "">VIEW ALL</Link>
+                <Link className = "view-button" to = "/PetHeaven/adoption">VIEW ALL</Link>
             </section>
 
             <section id = "join-us">
