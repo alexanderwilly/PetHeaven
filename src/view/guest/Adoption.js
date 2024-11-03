@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 // import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -18,6 +18,8 @@ const Adoption = () => {
     const [search, setSearch] = useState("");
     const [type, setType] = useState("all");
     const [gender, setGender] = useState("all");
+
+    const [isFilterSet, setIsFilterSet] = useState(false);
     
     const displayAnimals = async () =>{
         try{
@@ -27,7 +29,14 @@ const Adoption = () => {
         }
     }
 
-    const filterAnimals = async ()=>{
+    const displayAnimalsByPage = useCallback(async (arr) => {
+        if (animalsArray !== null){
+            setDisplayAnimalsArray(null);
+            await new DisplayAnimalsController({changeDisplayAnimalsArray: setDisplayAnimalsArray}).displayAnimalsByPage(page, arr);
+        }
+    }, [animalsArray, page]);
+
+    const filterAnimals = useCallback(async () => {
         if (animalsArray !== null){
             const textRegex = /^[a-zA-Z\s]*$/;
             if (!textRegex.test(search)){
@@ -35,18 +44,16 @@ const Adoption = () => {
                 return;
             }
             const fil = new DisplayAnimalsController({changeDisplayAnimalsArray: setDisplayAnimalsArray}).filterAnimals(search, type, gender, animalsArray);
-            setPage(1);
+            
+            if (isFilterSet){
+                setPage(1);
+                setIsFilterSet(false);
+            }
+            
+
             displayAnimalsByPage(fil);
         }
-    }
-
-    const displayAnimalsByPage = async (arr) =>{
-        if (animalsArray !== null){
-            setDisplayAnimalsArray(null);
-            await new DisplayAnimalsController({changeDisplayAnimalsArray: setDisplayAnimalsArray}).displayAnimalsByPage(page, arr);
-
-        }
-    }
+    }, [search, type, gender, animalsArray, isFilterSet, displayAnimalsByPage]);
 
     const handleChangeText = (e) =>{
         setSearch(e.target.value);
@@ -58,6 +65,8 @@ const Adoption = () => {
         }else{
             setGender(e.target.value);
         }
+
+        setIsFilterSet(true);
     }
 
     
@@ -68,11 +77,11 @@ const Adoption = () => {
 
     useEffect(() => {
         displayAnimalsByPage(animalsArray);
-    }, [animalsArray, page]);
+    }, [animalsArray, page, displayAnimalsByPage]);
 
     useEffect(() => {
         filterAnimals();
-    }, [type, gender]);
+    }, [type, gender, filterAnimals]);
 
     return (
         <main id = "adoption-page">
@@ -81,8 +90,8 @@ const Adoption = () => {
                 <h1>Choose Your Buddy</h1>
                 <div className="search-and-filter">
                     <div className="search-bar">
+                        <label htmlFor="search">Search: </label>
                         <input type="text" id ="search" placeholder="Search ..." onKeyUp={handleChangeText} />
-                        <button onClick={filterAnimals}>Search</button>
                     </div>
                     <div className="filter">
                         <div>

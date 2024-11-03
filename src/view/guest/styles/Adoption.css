@@ -30,6 +30,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+}
+
+.search-bar > label{
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000814;
 }
 
 .search-bar > input{
@@ -43,18 +50,6 @@
     background-color: #f1f1f1;
 }
 
-.search-bar > button{
-    background-color: #ffc300;
-    color: #000814;
-    font-size: 1rem;
-    font-weight: 700;
-    height: 50px;
-    padding: 8px 16px;
-    border: none;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    cursor: pointer;
-}
 
 .filter{
     display: flex;
