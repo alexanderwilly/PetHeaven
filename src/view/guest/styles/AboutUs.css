@@ -94,11 +94,6 @@
 
 
 
-@media (max-width: 1024px){
-    #who-we-are{
-        margin-top: 8vh;
-    }
-}
 
 @media (max-width:853px){
     .who-we-are-content {

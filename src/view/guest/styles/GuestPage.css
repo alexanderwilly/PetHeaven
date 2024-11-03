@@ -159,11 +159,14 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     
     gap: 2rem;
     height: 125vh;
     width: 85%;
+}
+
+.animals-container h1{
+    align-self: center;
 }
 
 .item{
@@ -177,7 +180,6 @@
     gap: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
     transition: 0.3s;
     text-decoration: none;
     color: #000814;
@@ -389,10 +391,28 @@ footer{
         font-size: 1rem;
     }
 
-    
-
     .sign-up-text p{
         font-size: 0.75rem;
         width: 100%;
     }
+
+    .animals-container{
+        gap: 2rem;
+    }
+
+    .item{
+        width: 250px;
+        height: 300px;
+    }
+    
+    .item > img{
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+    }
+
+    .item > span{
+        font-size: 1.25rem;
+    }
+    
 }

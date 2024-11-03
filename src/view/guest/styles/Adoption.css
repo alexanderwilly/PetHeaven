@@ -11,6 +11,7 @@
     font-weight: 700;
     color: #003566;
     margin-bottom: 2rem;
+    text-align: center;
 
     
 }
@@ -45,8 +46,7 @@
     padding: 0 1rem;
     font-size: 1rem;
     border: none;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-radius: 8px;
     background-color: #f1f1f1;
 }
 
@@ -64,7 +64,6 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    
 }
 
 
@@ -124,7 +123,6 @@
 }
 
 /* Page number */
-
 .pagination{
     width: 100%;
     display: flex;
@@ -155,4 +153,54 @@
 
 .pagination > button:disabled{
     opacity: 0.5;
+}
+
+
+
+@media (max-width:853px){
+    .search-and-filter{
+        align-items: flex-start;
+        width: 90%;
+    }
+    .search-bar{
+        justify-content: flex-start;
+    }
+
+    .search-bar > input{
+        width: 512px;
+    }
+
+    .filter{
+        flex-direction: column;
+        width: 256px;
+        gap: 1rem;
+    }
+
+    .filter select{
+        width: 128px;
+        
+    }
+
+    .filter > div{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+}
+
+@media (max-width: 420px){
+    .item-adopt{
+        width: 250px;
+        height: 300px;
+    }
+    
+    .item-adopt > img{
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+    }
+
+    .item-adopt > span{
+        font-size: 1.25rem;
+    }
 }
