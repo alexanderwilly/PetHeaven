@@ -62,7 +62,7 @@ const GuestPage = () =>{
                 <div className = "hero-text">
                     <h1>Your New Best Friend Awaits</h1>
                     <h3>Become Their Forever Family</h3>
-                    <button>ADOPT NOW</button>
+                    <Link to ="/PetHeaven/adoption">ADOPT NOW</Link>
                 </div>
                 <img src = {hero} alt = "hero" />
             </section>
