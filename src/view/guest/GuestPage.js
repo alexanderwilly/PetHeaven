@@ -12,7 +12,6 @@ import join_us  from '../../media/join-us.jpg';
 import DisplayAnimalsController from '../../controller/DisplayAnimalsController';
 import LoginLogoutController from '../../controller/LoginLogoutController';
 
-
 import './styles/GuestPage.css';
 
 
@@ -40,6 +39,7 @@ const GuestPage = () =>{
             toast.error(e.message);
         }
     }
+    
 
     const sign_up = () => {
         if(member !== undefined && member !== null){

@@ -9,6 +9,7 @@ class LoginController{
     async authenticate(email, password){
         try{
             const user = await this.member.authenticate(email, password);
+            console.log(user);
             this.view.onLoginSuccess(user);
         }catch(e){
             throw new Error(e.message);

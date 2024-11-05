@@ -75,11 +75,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.vision-mission-content div h3{
+.vision-mission-content div > h3{
     font-size: 24px;
     margin-bottom: 12px;
     color: #003566;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .vision-mission-content div p{

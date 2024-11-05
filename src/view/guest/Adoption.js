@@ -1,12 +1,14 @@
 import React, {useState, useEffect, useCallback} from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import release_pet_img from '../../media/pet_release_img.jpg';
 
 import NavBar from '../../component/NavBar';
 import './styles/Adoption.css';
 
 import DisplayAnimalsController from '../../controller/DisplayAnimalsController';
+import LoginLogoutController from '../../controller/LoginLogoutController';
 
 
 
@@ -20,6 +22,10 @@ const Adoption = () => {
     const [gender, setGender] = useState("all");
 
     const [isFilterSet, setIsFilterSet] = useState(false);
+    
+    const [member, setMember] = useState(undefined);
+
+    const navigate = useNavigate();
     
     const displayAnimals = async () =>{
         try{
@@ -69,9 +75,27 @@ const Adoption = () => {
         setIsFilterSet(true);
     }
 
+    const fill_form = () => {
+        if(member !== undefined && member !== null){
+            navigate("/PetHeaven/release-pet");
+        }else{
+            navigate("/PetHeaven/login");
+        }
+    }
+
+    const checkSignedIn = async () => {
+        try{
+            await new LoginLogoutController({onCheckSignedIn: setMember}).isSignedIn();
+        }
+        catch(e){
+            toast.error(e.message);
+        }
+    }
+
     
 
     useEffect(() => {
+        checkSignedIn();
         displayAnimals();
     }, []);
 
@@ -140,6 +164,18 @@ const Adoption = () => {
                         <button onClick={() => {setPage(page+1)} } disabled={displayAnimalsArray.length < 6}> &gt; </button>
                     </div>
                 }
+            </section>
+            <section id = "release-pet-section">
+            
+                <div className = "release-pet-container">
+                    <h2>Pet Release</h2>
+                    <p>
+                        Do you want to release your pet? Please fill in the form below and we will contact you as soon as possible.
+                    </p>
+                    <button onClick={fill_form}>Fill Form</button>
+                </div>
+                <img src={release_pet_img} alt="Release Pet" />
+            
             </section>
             <footer>
                 &copy; 2024 Pet Heaven. All Rights Reserved.

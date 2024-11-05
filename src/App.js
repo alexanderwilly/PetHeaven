@@ -4,6 +4,7 @@ import GuestPage from './view/guest/GuestPage';
 import Login from './view/guest/Login';
 import AboutUs from './view/guest/AboutUs';
 import Adoption from './view/guest/Adoption';
+import Volunteer from './view/guest/Volunteer';
 import ContactUs from './view/guest/ContactUs';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -19,6 +20,7 @@ function App() {
             <Route path='/PetHeaven/about-us' element={<AboutUs />} />
             <Route path='/PetHeaven/adoption' element={<Adoption />} />
             <Route path='/PetHeaven/contact-us' element={<ContactUs />} />
+            <Route path='/PetHeaven/volunteer' element={<Volunteer />} />
           </Routes>
           <ToastContainer />
         </div>

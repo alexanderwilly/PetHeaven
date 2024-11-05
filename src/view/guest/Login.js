@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useCallback} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -17,6 +17,15 @@ const Login = () => {
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value.trim();
 
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            if(email === "" || password === ""){
+                throw new Error("Please fill in all fields");
+            }
+            if(!emailPattern.test(email)){
+                throw new Error("Invalid email format");
+            }
+
             await new LoginLogoutController({onLoginSuccess: setMember}).authenticate(email, password);
         }
         catch(e){
@@ -24,27 +33,19 @@ const Login = () => {
         }
     }
 
-    const checkSignedIn = async () => {
-        try{
-            await new LoginLogoutController({onCheckSignedIn: setMember}).isSignedIn();
 
-            if(member){
-                toast.success("Login Successful");
-                setTimeout(() => {
-                    navigate("/PetHeaven");
-                }, 750);
-            }
+    const checkSignedIn = useCallback(async () => {
+        if(member){
+            toast.success("Login Successful");
+            setTimeout(() => {
+                navigate("/PetHeaven");
+            }, 750);
         }
-        catch(e){
-            toast.error(e.message);
-        }
-    }
+    }, [member, navigate]);
 
     useEffect(() => {
         checkSignedIn();
-    });
-
-    
+    }, [member, checkSignedIn]);
 
     return (
         <main id = "login-page">

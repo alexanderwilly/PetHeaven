@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import logo from '../media/logo.png';
@@ -13,7 +13,7 @@ import LoginLogoutController from '../controller/LoginLogoutController';
 
 const NavBar = () => {
 
-    const [member, setMember] = React.useState(undefined);
+    const [member, setMember] = useState(undefined);
 
     const showSidebar = () =>{
         const sidebar = document.querySelector('.sidebar');
