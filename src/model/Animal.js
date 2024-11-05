@@ -1,4 +1,9 @@
-import axios from 'axios';
+import { getDocs, collection } from "firebase/firestore";
+// getDoc, doc, query, where, setDoc, Timestamp, updateDoc, orderBy, startAt, endAt, deleteDoc, addDoc
+import { ref, getDownloadURL } from "firebase/storage";
+// getStorage, uploadBytes, deleteObject
+import {db, storage} from '../firebase/firebaseConfig';
+// auth
 
 class Animal{
     #name;
@@ -41,40 +46,39 @@ class Animal{
 
     async getPicture(path){
         try{
-            const res = await axios.get('http://myfunc-uyqxhlp5gq-uc.a.run.app/animal/getPicture', {params:{path}});
-            return res.data.url;
+            const storageRef = ref(storage, path);
+            const url = await getDownloadURL(storageRef);
+            return url;
         }catch(e){
             throw new Error(e);
         }
     }
 
+    
     async getAnimals(isHome){
         try{
-            const res = await axios.get('http://myfunc-uyqxhlp5gq-uc.a.run.app/animal/getAnimals');
-            const animal = [];
-            let a;
-            for (const doc of res.data.animals){
-                a = new Animal();
-                a.name = doc.name;
-                a.type = doc.type;
-                a.birthday = doc.birthday;
-                a.breed = doc.breed;
-                a.color = doc.color;
-                a.gender = doc.gender;
-                a.description = doc.description;
-                a.image = await this.getPicture(doc.image);
-                animal.push(a);
+            const q = await getDocs(collection(db, 'animals'));
+            const animals = [];
+            let animal;
+            for (const doc of q.docs){
+                animal = new Animal();
+                animal.name = doc.data().name;
+                animal.type = doc.data().type;
+                animal.birthday = doc.data().birthday;
+                animal.breed = doc.data().breed;
+                animal.color = doc.data().color;
+                animal.gender = doc.data().gender;
+                animal.description = doc.data().description;
+                animal.image = await this.getPicture(doc.data().image);
+                animals.push(animal);
 
                 if(isHome){
-                    if(animal.length === 6){
+                    if(animals.length === 6){
                         break;
                     }
                 }
             }
-
-            return animal;
-
-
+            return animals;
         }catch(e){
             throw new Error(e);
         }

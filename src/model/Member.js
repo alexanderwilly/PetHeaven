@@ -1,5 +1,10 @@
-import axios from 'axios';
-
+// import { getDocs, collection } from "firebase/firestore";
+// getDoc, doc, query, where, setDoc, Timestamp, updateDoc, orderBy, startAt, endAt, deleteDoc, addDoc
+// import { ref, getDownloadURL } from "firebase/storage";
+// getStorage, uploadBytes, deleteObject
+import { signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import {auth} from '../firebase/firebaseConfig';
+// db, storage
 class Member{
     #name;
     #email;
@@ -27,38 +32,54 @@ class Member{
     set gender(gender){this.#gender = gender;}
     set isVolunteer(isVolunteer){this.#isVolunteer = isVolunteer;}
 
-    async authenticate(email, password) {
-        try {
-            const res = await axios.post('http://myfunc-uyqxhlp5gq-uc.a.run.app/member/authenticate', { email, password });
-            return res.data.user.email; 
-        } catch (e) {
-            if (axios.isAxiosError(e)) {
-                const message = e.response?.data?.error || "An unexpected error occurred.\n" + e;
-                throw new Error(message);
-            } else {
-                throw new Error("An unexpected error occurred.\n" + e);
+    async authenticate(email, password){
+        try{
+            // Authenticate the user
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+            // check if user email is verified
+            if(!userCredential.user.emailVerified){
+                // resend verification email
+                await sendEmailVerification(userCredential.user);
+                throw new Error("Please verify your email address\nA verification email has been sent to your email address");
+            }else{
+                return userCredential.user;
             }
+            
+
+        }catch(e){
+            // Handle error
+            if (e.code === 'auth/user-disabled') {
+                throw new Error("Your account is suspended\nPlease contact customer support.");
+              } else if (e.code === 'auth/invalid-credential') {
+                throw new Error("Invalid email or password");
+              } else {
+                throw new Error(e.message + "\nPlease try again or contact customer support");
+              }
         }
     }
 
     // check if user is signed in
-    async isSignedIn(){
+    async isSignedIn() {
+        return new Promise((resolve) => {
+            auth.onAuthStateChanged((user) => {
+                if (user && user.emailVerified) {
+                    resolve(user.uid);
+                } else {
+                    resolve(undefined);
+                }
+            });
+        });
+    }
+
+    async signOut (){
         try{
-            const res = await axios.get('http://myfunc-uyqxhlp5gq-uc.a.run.app/member/isSignedIn');
-            return res.data.user;
+            await auth.signOut();
         }catch(e){
-            throw new Error(e);
+            throw new Error("Error occurred: " + e.message + "\nPlease try again or contact customer support");
         }
     }
 
-    async signOut(){
-        try{
-            await axios.post('http://myfunc-uyqxhlp5gq-uc.a.run.app/member/signOut');
-        }catch(e){
-            throw new Error(e);
-        }
-    }
-    
 }
 
 export default Member;
