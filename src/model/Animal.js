@@ -42,7 +42,7 @@ class Animal{
 
     async getAnimals(isHome){
         try{
-            const res = await axios.get('http://myfunc-uyqxhlp5gq-uc.a.run.app/animal/getAnimals');
+            const res = await axios.get('https://myfunc-uyqxhlp5gq-uc.a.run.app/animal/getAnimals');
             const animal = [];
             let a;
             for (const doc of res.data.animals){
