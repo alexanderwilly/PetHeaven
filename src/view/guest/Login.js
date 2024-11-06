@@ -2,7 +2,7 @@ import React, {useEffect, useCallback} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import LoginLogoutController from '../../controller/LoginLogoutController';
+import LoginLogoutController from '../../controller/LoginLogoutController.js';
 
 import './styles/Login.css';
 

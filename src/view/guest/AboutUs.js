@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../../component/NavBar";
+import NavBar from "../../component/NavBar.js";
 
 import who_we_are from "../../media/about_us.png";
 import vision from "../../media/vision.png";
