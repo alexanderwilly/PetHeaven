@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import GuestPage from './view/guest/GuestPage.js';
-import Login from './view/guest/Login.js';
-import AboutUs from './view/guest/AboutUs.js';
-import Adoption from './view/guest/Adoption.js';
-import Volunteer from './view/guest/Volunteer.js';
-import ContactUs from './view/guest/ContactUs.js';
+import GuestPage from './view/guest/GuestPage';
+import Login from './view/guest/Login';
+import AboutUs from './view/guest/AboutUs';
+import Adoption from './view/guest/Adoption';
+import Volunteer from './view/guest/Volunteer';
+import ContactUs from './view/guest/ContactUs';
 import 'react-toastify/dist/ReactToastify.css';
 
 

@@ -1,4 +1,4 @@
-import Member from '../model/Member.js';
+import Member from '../model/Member';
 
 class LoginController{
     constructor(view){

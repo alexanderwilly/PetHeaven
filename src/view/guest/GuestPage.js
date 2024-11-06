@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import NavBar from '../../component/NavBar.js';
+import NavBar from '../../component/NavBar';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -9,8 +9,8 @@ import volunteer from '../../media/volunteer.png';
 import donate from '../../media/donate.png';
 import join_us  from '../../media/join-us.jpg';
 
-import DisplayAnimalsController from '../../controller/DisplayAnimalsController.js';
-import LoginLogoutController from '../../controller/LoginLogoutController.js';
+import DisplayAnimalsController from '../../controller/DisplayAnimalsController';
+import LoginLogoutController from '../../controller/LoginLogoutController';
 
 import './styles/GuestPage.css';
 

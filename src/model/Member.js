@@ -3,7 +3,7 @@
 // import { ref, getDownloadURL } from "firebase/storage";
 // getStorage, uploadBytes, deleteObject
 import { signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import {auth} from '../firebase/firebaseConfig.js';
+import {auth} from '../firebase/firebaseConfig';
 // db, storage
 class Member{
     #name;

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../../component/NavBar.js';
+import NavBar from '../../component/NavBar';
 
 import './styles/Volunteer.css';
 

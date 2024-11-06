@@ -8,7 +8,7 @@ import './styles/NavBar.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Link } from 'react-router-dom';   
-import LoginLogoutController from '../controller/LoginLogoutController.js'; 
+import LoginLogoutController from '../controller/LoginLogoutController'; 
 
 
 const NavBar = () => {

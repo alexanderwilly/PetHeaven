@@ -4,11 +4,11 @@ import { toast } from 'react-toastify';
 
 import release_pet_img from '../../media/pet_release_img.jpg';
 
-import NavBar from '../../component/NavBar.js';
+import NavBar from '../../component/NavBar';
 import './styles/Adoption.css';
 
-import DisplayAnimalsController from '../../controller/DisplayAnimalsController.js';
-import LoginLogoutController from '../../controller/LoginLogoutController.js';
+import DisplayAnimalsController from '../../controller/DisplayAnimalsController';
+import LoginLogoutController from '../../controller/LoginLogoutController';
 
 
 

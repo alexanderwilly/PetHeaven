@@ -1,4 +1,4 @@
-import Animal from '../model/Animal.js';
+import Animal from '../model/Animal';
 
 class DisplayAnimalsController{
     constructor(view){
