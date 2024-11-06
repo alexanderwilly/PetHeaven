@@ -1,25 +1,30 @@
 {
   "files": {
-    "main.css": "/PetHeaven/static/css/main.d8b08b80.css",
-    "main.js": "/PetHeaven/static/js/main.49ef9b97.js",
+    "main.css": "/PetHeaven/static/css/main.f7d7edb1.css",
+    "main.js": "/PetHeaven/static/js/main.93c73e68.js",
     "static/js/453.7780256c.chunk.js": "/PetHeaven/static/js/453.7780256c.chunk.js",
     "static/media/about_us.png": "/PetHeaven/static/media/about_us.d60294f1ad0fcc8ce7f6.png",
     "static/media/join-us.jpg": "/PetHeaven/static/media/join-us.d5b425f22536e5092ad7.jpg",
+    "static/media/volunteer_img.jpg": "/PetHeaven/static/media/volunteer_img.1920b5bc4f3150feafd9.jpg",
     "static/media/logo.png": "/PetHeaven/static/media/logo.dc4ea7bf7e9c77e50c5f.png",
+    "static/media/volunteer2.jpg": "/PetHeaven/static/media/volunteer2.219cb2dcf34a49616bbe.jpg",
+    "static/media/volunteer_testimonial.jpg": "/PetHeaven/static/media/volunteer_testimonial.9156ce45b1ee099385ef.jpg",
     "static/media/pet_release_img.jpg": "/PetHeaven/static/media/pet_release_img.0868a9536e853f4bf459.jpg",
     "static/media/hero.jpg": "/PetHeaven/static/media/hero.cf1b4d3740b25d1ff1ef.jpg",
+    "static/media/adopter_testimonial.jpg": "/PetHeaven/static/media/adopter_testimonial.2c85d9fe84ee7eede2ce.jpg",
+    "static/media/resident_testimonial.jpg": "/PetHeaven/static/media/resident_testimonial.9ea006af69707a4b0e53.jpg",
     "static/media/volunteer.png": "/PetHeaven/static/media/volunteer.e2a20065ceaf6c4a9b64.png",
     "static/media/adopt.png": "/PetHeaven/static/media/adopt.7cb33c87a5b3483d9b6c.png",
     "static/media/mission.png": "/PetHeaven/static/media/mission.00e84b7eba15016c9c19.png",
     "static/media/vision.png": "/PetHeaven/static/media/vision.cc4ed2331d49479e0ce7.png",
     "static/media/cross_icon.png": "/PetHeaven/static/media/cross_icon.ebbe80983e5bb7ed2ef5.png",
     "index.html": "/PetHeaven/index.html",
-    "main.d8b08b80.css.map": "/PetHeaven/static/css/main.d8b08b80.css.map",
-    "main.49ef9b97.js.map": "/PetHeaven/static/js/main.49ef9b97.js.map",
+    "main.f7d7edb1.css.map": "/PetHeaven/static/css/main.f7d7edb1.css.map",
+    "main.93c73e68.js.map": "/PetHeaven/static/js/main.93c73e68.js.map",
     "453.7780256c.chunk.js.map": "/PetHeaven/static/js/453.7780256c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8b08b80.css",
-    "static/js/main.49ef9b97.js"
+    "static/css/main.f7d7edb1.css",
+    "static/js/main.93c73e68.js"
   ]
 }
