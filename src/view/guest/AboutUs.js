@@ -4,6 +4,9 @@ import NavBar from "../../component/NavBar";
 import who_we_are from "../../media/about_us.png";
 import vision from "../../media/vision.png";
 import mission from "../../media/mission.png";
+import adopter_testimonial from "../../media/adopter_testimonial.jpg";
+import resident_testimonial from "../../media/resident_testimonial.jpg";
+import volunteer_testimonial from "../../media/volunteer_testimonial.jpg";
 
 import './styles/AboutUs.css';
 
@@ -44,6 +47,54 @@ const AboutUs = () => {
                             To provide a safe and loving environment for all animals and to help them find loving homes.
                         </p>
                     </div>
+                </div>
+            </section>
+            <section id = "from-community">
+                <h2>
+                    Hear From Our Community
+                </h2>
+                <div className = "from-community-content">
+                    <div className = "testimonial">
+                        <img src = {adopter_testimonial} alt = "testimonial1" />
+                        <div className = "testimonial-content">
+                            <p className = "quote">
+                                "I adopted my dog from PetHeaven and I couldn't be happier. 
+                                They made the adoption process so easy and they were so helpful every step of the way. 
+                                I am so grateful for all of the work that they do and for the difference that they are making in the lives of animals."
+                            </p>
+                            <p className = "author">Ms. Ong</p>
+                            <span>Penny's Adopter</span>
+                        </div>
+                    </div>
+
+                    <div className = "testimonial">
+                        <img src = {volunteer_testimonial} alt = "testimonial2" />
+                        <div className = "testimonial-content">
+                            <p className = "quote">
+                                "I have been volunteering at PetHeaven for over a year now and it has been such a rewarding experience.
+                                The staff are so caring and dedicated to the animals and they go above and beyond to help them.
+                                I am so grateful for the opportunity to be a part of such an amazing organization."
+                            </p>
+                            <p className = "author">
+                                Micah
+                            </p>
+                            <span>Volunteer</span>
+                        </div>
+                    </div>
+
+                    <div className = "testimonial">
+                        <img src = {resident_testimonial} alt = "testimonial3" />
+                        <div className = "testimonial-content">
+                            <p className = "quote">
+                                "PetHeaven is an amazing organization that truly cares about the welfare of animals. 
+                                They go above and beyond to help animals in need and to find them loving homes. 
+                                I am so grateful for all of the work that they do and for the difference that they are making in the lives of animals."
+                            </p>
+                            <p className = "author">Mdm. Lim</p>
+                            <span>Resident</span>
+                        </div>
+                    </div>
+                    
                 </div>
             </section>
             <footer>
