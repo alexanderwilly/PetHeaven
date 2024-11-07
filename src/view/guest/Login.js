@@ -47,6 +47,10 @@ const Login = () => {
         checkSignedIn();
     }, [member, checkSignedIn]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <main id = "login-page">
             <Link to = "/PetHeaven" >&lt; Back</Link>

@@ -1,0 +1,165 @@
+#donate-text{
+    margin-top: 16vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#donate-text > h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #003566;
+    text-align: center;
+}
+
+#donate-text > p{
+    color: #000814;
+    font-size: 16px;
+    width: 75%;
+}
+
+
+.payment{
+    width: 75%;
+    margin: 16px auto;
+    background-color: #f2f2f2;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.payment h4{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #003566;
+    margin-bottom: 8px;
+}
+
+.payment > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 8px 0;
+}
+
+.method{
+    margin: 8px 0;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    width: 45%;
+    
+}
+
+.method > h6{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #001d3d;
+    margin-bottom: 8px;
+}
+
+
+
+
+.payment > form > input[type="text"],
+.payment > form > input[type="email"]
+{
+    margin: 4px 0;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #000814;
+    width: 75%;
+    height: 40px;
+}
+
+.payment > form > input[type="file"],
+.payment > form > input[type="number"],
+.payment > form > input[type="tel"]{
+    
+    margin: 4px 0;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #000814;
+    height: 40px;
+    width: 256px;
+    
+} 
+
+
+
+.payment > form > label{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000814;
+}
+
+.payment > form > textarea{
+    margin: 4px 0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #000814;
+    height: 100px;
+    width: 85%;
+}
+
+.payment > form > label:last-of-type{
+    margin-top: 16px;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.submit-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-button-container > button{
+    margin: 16px 0;
+    padding: 16px 60px;
+    border-radius: 8px;
+    border: none;
+    background-color: #FFC300;
+    color: #000814;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+@media (max-width:1024px){
+    #donate-text{
+        margin-top: 14vh;
+    }    
+}
+
+@media (max-width:855px){
+    
+    .payment > div{
+        flex-direction: column;
+    }    
+
+    .method{
+        width: 75%;
+    }
+}
+
+@media (max-width:420px){
+    .method{
+        width: 100%;
+    }
+
+    .payment > form > input[type="file"],
+    .payment > form > input[type="number"],
+    .payment > form > input[type="tel"],
+    .payment > form > input[type="text"],
+    .payment > form > input[type="email"]
+    {
+        width: 100%;
+    }
+    
+}

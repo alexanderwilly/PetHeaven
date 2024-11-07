@@ -51,6 +51,7 @@ const GuestPage = () =>{
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         checkSignedIn();
         displayAnimals();
     }, []);

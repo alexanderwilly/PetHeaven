@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../../component/NavBar";
 
 import who_we_are from "../../media/about_us.png";
@@ -12,6 +12,11 @@ import './styles/AboutUs.css';
 
 
 const AboutUs = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return(
         <main id = "about-us-page">
             <NavBar />
@@ -62,7 +67,7 @@ const AboutUs = () => {
                                 They made the adoption process so easy and they were so helpful every step of the way. 
                                 I am so grateful for all of the work that they do and for the difference that they are making in the lives of animals."
                             </p>
-                            <p className = "author">Ms. Ong</p>
+                            <p className = "author">- Ms. Ong</p>
                             <span>Penny's Adopter</span>
                         </div>
                     </div>
@@ -75,9 +80,7 @@ const AboutUs = () => {
                                 The staff are so caring and dedicated to the animals and they go above and beyond to help them.
                                 I am so grateful for the opportunity to be a part of such an amazing organization."
                             </p>
-                            <p className = "author">
-                                Micah
-                            </p>
+                            <p className = "author">- Micah</p>
                             <span>Volunteer</span>
                         </div>
                     </div>
@@ -90,7 +93,7 @@ const AboutUs = () => {
                                 They go above and beyond to help animals in need and to find them loving homes. 
                                 I am so grateful for all of the work that they do and for the difference that they are making in the lives of animals."
                             </p>
-                            <p className = "author">Mdm. Lim</p>
+                            <p className = "author">- Mdm. Lim</p>
                             <span>Resident</span>
                         </div>
                     </div>
