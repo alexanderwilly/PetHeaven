@@ -1,0 +1,71 @@
+.process-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 16vh;
+    height: 100vh;
+}
+
+.process-container h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #001d3d;
+}
+
+#pet-info{
+    display:flex;
+    padding-top:16vh;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#pet-info > div{
+    width: 50%;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container > img{
+    width: 512px;
+    height: 512px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 16px rgba(0,0,0,0.3);
+}
+
+
+.pet-details > h1{
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    font-weight: 600;
+    color: #003566;
+}
+
+.pet-details > span{
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-weight: 400;
+    color: #001d3d;
+}
+
+.pet-details > p{
+    font-size: 1rem;
+    width: 75%;
+    font-weight: 300;
+    color: #000814;
+}
+
+.pet-details > button{
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000814;
+    background-color: #ffc300;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

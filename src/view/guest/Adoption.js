@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import release_pet_img from '../../media/pet_release_img.jpg';
@@ -147,10 +147,10 @@ const Adoption = () => {
                                 displayAnimalsArray.length > 0 ?  
                                 displayAnimalsArray.map((animal, index) => {
                                     return (
-                                        <div key={index} className="item-adopt">
+                                        <Link key={index} className="item-adopt" to = '/PetHeaven/pet-info' state = {{id:animal.id}}>
                                             <img src={animal.image} alt={animal.name} />
                                             <span>{animal.name}</span>
-                                        </div>
+                                        </Link>
                                     );
                                 })
                                 : <h1>No animals available for adoption</h1>

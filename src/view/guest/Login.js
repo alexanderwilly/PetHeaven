@@ -63,7 +63,7 @@ const Login = () => {
                     <input type = "password" name = "password" id = "password"  required />
                     <div>
                         <Link to = "/PetHeaven/register">Create an account</Link>
-                        <Link to = "/PetHeaven/forgot-password">Forgot password?</Link>
+                        <Link to = "/PetHeaven/reset-password">Forgot password?</Link>
                     </div>
                     <button id = "login" onClick={login}>Login</button>
                 </form>

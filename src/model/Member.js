@@ -1,10 +1,7 @@
-// import { getDocs, collection } from "firebase/firestore";
-// getDoc, doc, query, where, setDoc, Timestamp, updateDoc, orderBy, startAt, endAt, deleteDoc, addDoc
-// import { ref, getDownloadURL } from "firebase/storage";
-// getStorage, uploadBytes, deleteObject
-import { signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+
+import { signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
 import {auth} from '../firebase/firebaseConfig';
-// db, storage
+
 class Member{
     #name;
     #email;
@@ -46,7 +43,6 @@ class Member{
                 return userCredential.user;
             }
             
-
         }catch(e){
             // Handle error
             if (e.code === 'auth/user-disabled') {
@@ -75,6 +71,14 @@ class Member{
     async signOut (){
         try{
             await auth.signOut();
+        }catch(e){
+            throw new Error("Error occurred: " + e.message + "\nPlease try again or contact customer support");
+        }
+    }
+
+    async resetPassword(email){
+        try{
+            await sendPasswordResetEmail(auth, email);
         }catch(e){
             throw new Error("Error occurred: " + e.message + "\nPlease try again or contact customer support");
         }
