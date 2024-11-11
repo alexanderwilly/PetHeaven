@@ -81,6 +81,11 @@
     margin-top: 48px;
 }
 
+#login-container form button:disabled{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 #login-container form div{
     display: flex;
     justify-content: space-between;

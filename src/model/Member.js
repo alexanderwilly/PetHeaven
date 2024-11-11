@@ -1,6 +1,7 @@
 
-import { signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
-import {auth} from '../firebase/firebaseConfig';
+import { signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, createUserWithEmailAndPassword } from "firebase/auth";
+import {auth, db} from '../firebase/firebaseConfig';
+import { doc, setDoc, Timestamp } from "firebase/firestore";
 
 class Member{
     #name;
@@ -38,7 +39,7 @@ class Member{
             if(!userCredential.user.emailVerified){
                 // resend verification email
                 await sendEmailVerification(userCredential.user);
-                throw new Error("Please verify your email address\nA verification email has been sent to your email address");
+                throw new Error("Please verify your email address.\nA verification email has been sent to your email address");
             }else{
                 return userCredential.user;
             }
@@ -46,7 +47,7 @@ class Member{
         }catch(e){
             // Handle error
             if (e.code === 'auth/user-disabled') {
-                throw new Error("Your account is suspended\nPlease contact customer support.");
+                throw new Error("Your account is suspended.\nPlease contact customer support.");
               } else if (e.code === 'auth/invalid-credential') {
                 throw new Error("Invalid email or password");
               } else {
@@ -81,6 +82,36 @@ class Member{
             await sendPasswordResetEmail(auth, email);
         }catch(e){
             throw new Error("Error occurred: " + e.message + "\nPlease try again or contact customer support");
+        }
+    }
+
+    async register(name, email, password, gender, dob){
+        try{
+            // Register the user
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+            // Send verification email
+            await sendEmailVerification(userCredential.user);
+
+            // Add member to database
+            await setDoc(doc(db, "members", userCredential.user.uid), {
+                name: name,
+                email: email,
+                gender: gender,
+                dob: Timestamp.fromDate(new Date(dob)),
+                isVolunteer: false
+            });
+
+        }catch(e){
+            if (e.code === 'auth/email-already-in-use') {
+                throw new Error("The email provided has already been used. Please use another email.");
+            }
+            else if (e.code === 'auth/weak-password') {
+                throw new Error("The password is too weak. Min 6 characters.");
+            }
+            else {
+                throw new Error("Error occurred: " + e.message + "\nPlease try again or contact customer support.");
+            }
         }
     }
 

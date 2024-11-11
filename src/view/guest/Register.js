@@ -1,13 +1,15 @@
 import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
-// import RegisterController from '../../controller/RegisterController';
+import RegisterController from '../../controller/RegisterController';
 
 import './styles/Register.css';
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const [formData, setFormData] = React.useState({
         name: "",
@@ -22,6 +24,7 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         try{
+
             // Regex
             const namePattern = /^[a-zA-Z\s]+$/;
             const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -30,6 +33,8 @@ const Register = () => {
             const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
             e.preventDefault();
+            // disable submit button
+            e.target.querySelector('button').disabled = true;
 
             if(formData.name === "" || formData.email === "" || formData.password === "" || formData.confirmPassword === "" || formData.gender === "" || formData.dob === null){
                 throw new Error("Please fill in all fields");
@@ -56,12 +61,21 @@ const Register = () => {
                 throw new Error("Please agree to the terms and conditions");
             }
 
-            // await new RegisterController().register(formData);
+            await new RegisterController().register(formData.name, formData.email, formData.password, formData.gender, formData.dob);
 
             toast.success("Registration Successful, Please check your email to verify your account");
 
+            setTimeout(()=>{
+                navigate('/PetHeaven/login');
+            }, 1000);
+
+
+
         }catch(e){
             toast.error(e.message);
+
+            // enable submit button
+            document.querySelector('button').disabled = false;
         }
     };
 

@@ -14,6 +14,9 @@ const Login = () => {
     const login = async (e) => {
         try{
             e.preventDefault();
+            // disable button
+            document.getElementById("login").disabled = true;
+
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value.trim();
 
@@ -30,6 +33,9 @@ const Login = () => {
         }
         catch(e){
             toast.error(e.message);
+
+            // enable button
+            document.getElementById("login").disabled = false;
         }
     }
 

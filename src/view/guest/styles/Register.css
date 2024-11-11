@@ -81,6 +81,11 @@
     margin-top: 48px;
 }
 
+#register-container form button:disabled{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 .terms-container{
     margin-top: 16px;
 }
