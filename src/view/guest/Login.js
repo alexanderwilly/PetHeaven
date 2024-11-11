@@ -56,7 +56,7 @@ const Login = () => {
             <Link to = "/PetHeaven" >&lt; Back</Link>
             <section id = "login-container">
                 <h1>Login</h1>
-                <form>
+                <form onSubmit={login}>
                     <label>Email</label>
                     <input type = "email" name = "email" id ="email" required />
                     <label>Password</label>
@@ -65,7 +65,7 @@ const Login = () => {
                         <Link to = "/PetHeaven/register">Create an account</Link>
                         <Link to = "/PetHeaven/reset-password">Forgot password?</Link>
                     </div>
-                    <button id = "login" onClick={login}>Login</button>
+                    <button type="submit" id = "login">Login</button>
                 </form>
             </section>
         </main>

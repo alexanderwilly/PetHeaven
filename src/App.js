@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import GuestPage from './view/guest/GuestPage';
 import Login from './view/guest/Login';
+import Register from './view/guest/Register';
 import ResetPassword from './view/guest/ResetPassword';
 import AboutUs from './view/guest/AboutUs';
 import Adoption from './view/guest/Adoption';
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path='/PetHeaven' element={<GuestPage />} />
             <Route path='/PetHeaven/login' element={<Login />} /> 
+            <Route path='/PetHeaven/register' element={<Register />} />
             <Route path='/PetHeaven/reset-password' element={<ResetPassword />} />
             <Route path='/PetHeaven/about-us' element={<AboutUs />} />
             <Route path='/PetHeaven/adoption' element={<Adoption />} />

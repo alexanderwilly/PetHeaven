@@ -69,3 +69,45 @@
     border-radius: 8px;
     cursor: pointer;
 }
+
+@media (max-width:1025px){
+    .img-container > img{
+        width: 384px;
+        height: 384px;
+    }
+    .pet-details > button{
+        padding: 0.75rem 1.5rem;
+    }
+
+
+}
+
+
+
+@media (max-width:854px){
+    #pet-info{
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 16vh;
+    }
+
+
+    #pet-info > div{
+        width: 75%;
+    }
+
+    .img-container > img{
+        width: 75%;
+        height: auto;
+    }
+
+    .pet-details > p{
+        width: 100%;
+    }
+}
+
+@media (max-width:540px){
+    .img-container > img{
+        width: 100%;
+    }
+}
