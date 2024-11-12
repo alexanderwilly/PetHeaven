@@ -1,6 +1,6 @@
 import Animal from "../model/Animal";
 
-class DisplayanimalDetailsController{
+class DisplayAnimalDetailsController{
     constructor(view){
         this.view = view;
         this.animal = new Animal();
@@ -15,4 +15,4 @@ class DisplayanimalDetailsController{
     }
 }
 
-export default DisplayanimalDetailsController;
+export default DisplayAnimalDetailsController;

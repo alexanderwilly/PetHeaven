@@ -36,9 +36,19 @@
     transition: all 0.5s ease;
 }
 
+.navbar a:hover{
+    border-bottom: 1px solid #001d3d;
+}
+
+.profile_btn{
+    width: 50px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
 .navbar > img{
     width: 85px;
-    
+    cursor: pointer;
 }
 
 .top-nav button{

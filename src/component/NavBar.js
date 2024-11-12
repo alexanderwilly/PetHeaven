@@ -4,14 +4,17 @@ import { toast } from 'react-toastify';
 import logo from '../media/logo.png';
 import cross_icon from '../media/cross_icon.png';
 import bars_icon from '../media/bars_icon.png';
+import profile_pic from '../media/profile_pic.png';
 import './styles/NavBar.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Link } from 'react-router-dom';   
+import { Link, useNavigate } from 'react-router-dom';   
 import LoginLogoutController from '../controller/LoginLogoutController'; 
 
 
 const NavBar = () => {
+
+    const navigate = useNavigate();
 
     const [member, setMember] = React.useState(undefined);
 
@@ -35,15 +38,7 @@ const NavBar = () => {
         }
     }
 
-    const handleLogout = async () => {
-        try{
-            await new LoginLogoutController({onSignOutSuccess: setMember}).signOut();
-            window.location.href = "/PetHeaven";
-        }
-        catch(e){
-            toast.error(e.message);
-        }
-    }
+    
 
     useEffect(() => {
         checkSignedIn();
@@ -52,7 +47,7 @@ const NavBar = () => {
 
     return (
         <nav className = "navbar">
-            <img src = {logo} alt = "logo" />
+            <img src = {logo} alt = "logo" onClick={()=>{navigate("/PetHeaven/")}} />
 
             <ul className = "sidebar">
                 <li id = "close-icon" className = "close-icon" >
@@ -78,10 +73,9 @@ const NavBar = () => {
                 <li>
                     {
                      member === undefined ?
-                     <Link to = "/PetHeaven/login" id ="login-btn" className = "btn">
-                        <button>LOGIN</button>
-                    </Link> :
-                    <button onClick={handleLogout}>LOGOUT</button>
+                    <button id ="login-btn" className = "btn" onClick={()=>navigate("/PetHeaven/login")}>LOGIN</button>
+                    :
+                    <img src = {profile_pic} alt = "profile_pic" className = "profile_btn" onClick={()=>navigate("/PetHeaven/member/profile")} />
                     
                     }
                 </li>

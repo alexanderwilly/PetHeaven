@@ -1,0 +1,224 @@
+.profile-loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 16vh;
+}
+
+.profile-page-container aside{
+    width: 256px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profile-page-container aside > a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor:pointer;
+    color: #000814;
+    text-decoration: none;
+}
+
+.profile-page-container aside > a:hover{
+    background-color: #ffd60a;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.profile-page-container aside > a > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.profile-page-container aside > a > span{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-page-container section{
+    width: 640px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}   
+
+
+
+/* Profile */
+.account-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.profile-info-container{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.profile-button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.account-header > div > img{
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 4px;
+    border: 1px solid black;
+}
+
+.account-header > div > div > h1{
+    font-size: 24px;
+    font-weight: bold;
+    color: #003566;
+}
+
+.account-header > div > div > h6{
+    font-size: 12px;
+    font-weight: 400;
+    color: #001d3d;
+}
+
+
+
+/* #edit-btn,  */
+#logout-btn{
+    background-color: #ffd60a;
+    color: #001d3d;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    width: 96px;
+}
+
+.account-details{
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.account-details > h2{
+    font-weight: bold;
+    color: #003566;
+}
+
+.account-details td{
+    padding: 4px;
+    width: 25%;
+}
+
+.account-details td h6{
+    font-weight: bold;
+    color: #001d3d;
+    font-size: 16px;
+}
+
+.account-details td span{
+    font-size: 16px;
+    color: #000814;
+    font-weight: 400;
+}
+
+@media (max-width:1025px) {
+    .profile-page-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-page-container aside{
+        width: 75%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 32px;
+
+        border-bottom: 1px solid #515151;
+
+    }
+
+    .profile-page-container aside > a{
+        width: 256px;
+    }
+}
+
+@media (max-width: 540px){
+    .profile-page-container aside > a{
+        padding: 8px;
+        width: 192px;
+    }
+
+    .profile-page-container aside > a > img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .profile-page-container aside > a > span{
+        font-size: 14px;
+    }
+
+    .profile-page-container aside{
+        width: 95%;
+    }
+
+    .profile-page-container section{
+        width: 95%;
+    }
+
+    .account-header > div > div > h1{
+        font-size: 20px;
+    }
+
+    .account-header > div > div > h6{
+        font-size: 10px;
+    }
+
+    .account-details td h6{
+        font-size: 14px;
+    }
+
+    .account-details td span{
+        font-size: 12px;
+    }
+
+    #logout-btn{
+        font-size: 14px;
+        width: 80px;
+    }
+
+    
+    
+}

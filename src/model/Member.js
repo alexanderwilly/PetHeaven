@@ -1,7 +1,7 @@
 
 import { signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, createUserWithEmailAndPassword } from "firebase/auth";
 import {auth, db} from '../firebase/firebaseConfig';
-import { doc, setDoc, Timestamp } from "firebase/firestore";
+import { doc, getDoc, setDoc, Timestamp } from "firebase/firestore";
 
 class Member{
     #name;
@@ -59,9 +59,20 @@ class Member{
     // check if user is signed in
     async isSignedIn() {
         return new Promise((resolve) => {
-            auth.onAuthStateChanged((user) => {
+            auth.onAuthStateChanged( async (user) => {
                 if (user && user.emailVerified) {
-                    resolve(user.uid);
+
+                    // Get member data from database
+                    const docRef = doc(db, "members", user.uid);
+                    const docSnap = await getDoc(docRef);
+
+                    if (docSnap.exists()) {
+                        const data = docSnap.data();
+                
+                        resolve(new Member(data.name, data.email, data.birthday.toDate(), data.gender, data.isVolunteer));
+                    }else{
+                        resolve(undefined);
+                    }
                 } else {
                     resolve(undefined);
                 }

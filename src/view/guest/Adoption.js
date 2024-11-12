@@ -77,7 +77,7 @@ const Adoption = () => {
 
     const fill_form = () => {
         if(member !== undefined && member !== null){
-            navigate("/PetHeaven/release-pet");
+            navigate("/PetHeaven/member/release-pet");
         }else{
             navigate("/PetHeaven/login");
         }

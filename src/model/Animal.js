@@ -10,8 +10,9 @@ class Animal{
     #gender;
     #description;
     #image;
+    #isAvailable;
     
-    constructor(id, name, type, birthday, breed, color, gender, description, image){
+    constructor(id, name, type, birthday, breed, color, gender, description, image, isAvailable){
         this.#id = id;
         this.#name = name;
         this.#type = type;
@@ -21,6 +22,7 @@ class Animal{
         this.#gender = gender;
         this.#description = description;
         this.#image = image;
+        this.#isAvailable = isAvailable;
     }
 
     get id(){return this.#id;}
@@ -32,6 +34,7 @@ class Animal{
     get gender(){return this.#gender;}
     get description(){return this.#description;}
     get image(){return this.#image;}
+    get isAvailable(){return this.#isAvailable;}
 
     set id(id){this.#id = id;}
     set name(name){this.#name = name;}
@@ -42,6 +45,7 @@ class Animal{
     set gender(gender){this.#gender = gender;}
     set description(description){this.#description = description;}
     set image(image){this.#image = image;}
+    set isAvailable(isAvailable){this.#isAvailable = isAvailable;}
 
     
 
@@ -55,12 +59,9 @@ class Animal{
                 a.id = doc.id;
                 a.name = doc.name;
                 a.type = doc.type;
-                // a.birthday = this.toStringFirebaseDateTime(doc.birthday);
-                // a.breed = doc.breed;
-                // a.color = doc.color;
                 a.gender = doc.gender;
-                // a.description = doc.description;
                 a.image = doc.image;
+                a.isAvailable = doc.isAvailable;
                 animal.push(a);
 
                 if(isHome){
@@ -92,6 +93,7 @@ class Animal{
             this.gender = doc.gender;
             this.description = doc.description;
             this.image = doc.image;
+            this.isAvailable = doc.isAvailable;
 
             return this;
 

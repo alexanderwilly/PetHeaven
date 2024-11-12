@@ -10,6 +10,9 @@ import PetInfo from './view/guest/PetInfo';
 import Volunteer from './view/guest/Volunteer';
 import Donate from './view/guest/Donate';
 import ContactUs from './view/guest/ContactUs';
+
+import Profile from './view/member/Profile';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -29,6 +32,8 @@ function App() {
             <Route path='/PetHeaven/donate' element={<Donate />} />
             <Route path='/PetHeaven/volunteer' element={<Volunteer />} />
             <Route path='/PetHeaven/contact-us' element={<ContactUs />} />
+
+            <Route path='/PetHeaven/member/profile' element={<Profile />} />
           </Routes>
           <ToastContainer />
         </div>

@@ -113,10 +113,10 @@ const GuestPage = () =>{
                                 animalsArray.length > 0 ? 
                                 animalsArray.map((animal, index) => {
                                     return (
-                                        <div key={index} className="item">
+                                        <Link key={index} className="item-adopt" to = '/PetHeaven/pet-info' state = {{id:animal.id}}>
                                             <img src={animal.image} alt={animal.name} />
                                             <span>{animal.name}</span>
-                                        </div>
+                                        </Link>
                                     );
                                 })
                                 : <h1>No animals available for adoption</h1>

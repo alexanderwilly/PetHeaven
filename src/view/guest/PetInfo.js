@@ -1,31 +1,54 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
 import NavBar from '../../component/NavBar';
-import DisplayanimalDetailsController from '../../controller/DisplayAnimalDetailsController';
+import DisplayAnimalDetailsController from '../../controller/DisplayAnimalDetailsController';
+import LoginLogoutController from '../../controller/LoginLogoutController';
+
 
 import './styles/PetInfo.css';
 
 const PetInfo = () => {
     let location = useLocation();
+    const navigate = useNavigate();
+    
     const [pet, setPet] = useState(undefined);
+    const [member, setMember] = useState(undefined);
 
     const displayAnimal = useCallback(async () =>{
         try{
-            await new DisplayanimalDetailsController({changeAnimal: setPet}).getAnimalById(location.state.id);
+            await new DisplayAnimalDetailsController({changeAnimal: setPet}).getAnimalById(location.state.id);
         }catch(e){
             toast.error(e.message);
             setPet(null);
         }
     }, [location.state.id]);
 
+    const checkSignedIn = async () => {
+        try{
+            await new LoginLogoutController({onCheckSignedIn: setMember}).isSignedIn();
+        }
+        catch(e){
+            toast.error(e.message);
+        }
+    }
+
+    const handleAdopt = () => {
+        if(member !== undefined && member !== null){
+            navigate("/PetHeaven/member/adopt")
+        }else{
+            navigate("/PetHeaven/login");
+        }
+    }
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        checkSignedIn();
         displayAnimal();
     }, [displayAnimal]);
-
+    
     return (
         <main>
             <NavBar />
@@ -60,7 +83,7 @@ const PetInfo = () => {
                                 {pet.description}
                             </p>
 
-                            <button>Adopt Me</button>
+                            <button onClick={handleAdopt}>Adopt Me</button>
 
                         </div>
                     
