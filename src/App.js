@@ -12,6 +12,7 @@ import Donate from './view/guest/Donate';
 import ContactUs from './view/guest/ContactUs';
 
 import Profile from './view/member/Profile';
+import ReleasePet from './view/member/ReleasePet';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -34,6 +35,7 @@ function App() {
             <Route path='/PetHeaven/contact-us' element={<ContactUs />} />
 
             <Route path='/PetHeaven/member/profile' element={<Profile />} />
+            <Route path='/PetHeaven/member/release-pet' element={<ReleasePet />} />
           </Routes>
           <ToastContainer />
         </div>
