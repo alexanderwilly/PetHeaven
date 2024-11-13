@@ -42,6 +42,23 @@ const PetInfo = () => {
         }
     }
 
+    const calculateAge = (dob) => {
+        // Return x years or x months (if less than 1 year)
+
+        const today = new Date();
+        const birthDate = new Date(dob);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        if (age === 0){
+            return m + " months";
+        }
+        return age + " years";
+    }
+
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -73,7 +90,7 @@ const PetInfo = () => {
                             <h1>{pet.name}</h1>
                             <br/>
                             <span><strong>Gender:</strong> {pet.gender}</span> <br/>
-                            <span><strong>Birthday:</strong> {pet.birthday}</span> <br/>
+                            <span><strong>Birthday:</strong> {pet.birthday} ({calculateAge(pet.birthday)})</span> <br/>
                             <span><strong>Type:</strong> {pet.type}</span> <br/>
                             <span><strong>Breed:</strong> {pet.breed}</span> <br/>
                             <span><strong>Color:</strong> {pet.color}</span> <br/>

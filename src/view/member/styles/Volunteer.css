@@ -77,3 +77,10 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+@media (max-width: 540px){
+    .volunteer-form-container select{
+        width: 75%;
+    }
+    
+}
