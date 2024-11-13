@@ -13,6 +13,7 @@ import ContactUs from './view/guest/ContactUs';
 
 import Profile from './view/member/Profile';
 import ReleasePet from './view/member/ReleasePet';
+import VolunteerMember from './view/member/VolunteerMember';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -36,6 +37,7 @@ function App() {
 
             <Route path='/PetHeaven/member/profile' element={<Profile />} />
             <Route path='/PetHeaven/member/release-pet' element={<ReleasePet />} />
+            <Route path='/PetHeaven/member/volunteer' element={<VolunteerMember />} />
           </Routes>
           <ToastContainer />
         </div>

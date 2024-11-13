@@ -47,10 +47,10 @@ const Profile = () => {
 
     if(member){
         return(
-            <div id = "profile-page">
+            <div className = "member-page">
                 <NavBarPortal />
 
-                <main className="profile-page-container">
+                <main className="member-page-container">
                     <aside>
                         <Link id = "aside-btn-account" to = "/PetHeaven/member/profile">
                             <img src={account_portal} alt="acc_icon" />
@@ -84,7 +84,6 @@ const Profile = () => {
                             </div>
 
                             <div className="profile-button-container">
-                                {/* <button id="edit-btn">Edit</button> */}
                                 <button id="logout-btn" onClick={handleLogout}>Logout</button>
                             </div>
                         </div>
@@ -119,7 +118,7 @@ const Profile = () => {
                                     <tr>
                                         <td>
                                             <h6>Volunteer</h6>
-                                            <span id = "volunteer">{member ? (member.isVolunteer ? "Yes" : "No") : "NIL"}</span>
+                                            <span id = "volunteer">{member ? (member.isVolunteer ? member.volunteerType : "No") : "NIL"}</span>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -134,7 +133,7 @@ const Profile = () => {
         );
     }else{
         return(
-            <div className = "profile-loading">
+            <div className = "member-loading">
                 <h1>Loading...</h1>
             </div>
         );

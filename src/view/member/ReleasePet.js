@@ -163,10 +163,10 @@ const ReleasePet = () => {
 
     if(member){
         return(
-            <div id = "profile-page">
+            <div className = "member-page">
                 <NavBarPortal />
 
-                <main className="profile-page-container">
+                <main className="member-page-container">
                     <aside>
                         <Link id = "aside-btn-account" to = "/PetHeaven/member/profile">
                             <img src={account_portal} alt="acc_icon" />
@@ -273,7 +273,7 @@ const ReleasePet = () => {
 
     }else{
         return(
-            <div className = "profile-loading">
+            <div className = "member-loading">
                 <h1>Loading...</h1>
             </div>
         );

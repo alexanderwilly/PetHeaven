@@ -1,11 +1,13 @@
-.profile-loading{
+
+
+.member-loading{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.profile-page-container {
+.member-page-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -13,14 +15,14 @@
     padding-top: 16vh;
 }
 
-.profile-page-container aside{
+.member-page-container aside{
     width: 256px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.profile-page-container aside > a{
+.member-page-container aside > a{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -37,23 +39,27 @@
     text-decoration: none;
 }
 
-.profile-page-container aside > a:hover{
+
+
+
+
+.member-page-container aside > a:hover{
     background-color: #ffd60a;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
-.profile-page-container aside > a > img{
+.member-page-container aside > a > img{
     width: 50px;
     height: 50px;
     border-radius: 8px;
 }
 
-.profile-page-container aside > a > span{
+.member-page-container aside > a > span{
     font-size: 18px;
     font-weight: bold;
 }
 
-.profile-page-container section{
+.member-page-container section{
     width: 640px;
     padding: 16px;
     display: flex;
@@ -107,7 +113,6 @@
 
 
 
-/* #edit-btn,  */
 #logout-btn{
     background-color: #ffd60a;
     color: #001d3d;
@@ -153,12 +158,12 @@
 }
 
 @media (max-width:1025px) {
-    .profile-page-container{
+    .member-page-container{
         flex-direction: column;
         align-items: center;
     }
 
-    .profile-page-container aside{
+    .member-page-container aside{
         width: 75%;
         align-items: center;
         justify-content: center;
@@ -170,31 +175,31 @@
 
     }
 
-    .profile-page-container aside > a{
+    .member-page-container aside > a{
         width: 256px;
     }
 }
 
 @media (max-width: 540px){
-    .profile-page-container aside > a{
+    .member-page-container aside > a{
         padding: 8px;
         width: 192px;
     }
 
-    .profile-page-container aside > a > img{
+    .member-page-container aside > a > img{
         width: 40px;
         height: 40px;
     }
 
-    .profile-page-container aside > a > span{
+    .member-page-container aside > a > span{
         font-size: 14px;
     }
 
-    .profile-page-container aside{
+    .member-page-container aside{
         width: 95%;
     }
 
-    .profile-page-container section{
+    .member-page-container section{
         width: 95%;
     }
 

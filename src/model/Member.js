@@ -9,13 +9,17 @@ class Member{
     #birthday;
     #gender;
     #isVolunteer;
+    #availability;
+    #volunteerType;
 
-    constructor(name, email, birthday, gender, isVolunteer){
+    constructor(name, email, birthday, gender, isVolunteer, availability, volunteerType){
         this.#name = name;
         this.#email = email;
         this.#birthday = birthday;
         this.#gender = gender;
         this.#isVolunteer = isVolunteer;
+        this.#availability = availability;
+        this.#volunteerType = volunteerType;
     }
 
     get name(){return this.#name;}
@@ -23,12 +27,16 @@ class Member{
     get birthday(){return this.#birthday;}
     get gender(){return this.#gender;}
     get isVolunteer(){return this.#isVolunteer;}
+    get availability(){return this.#availability;}
+    get volunteerType(){return this.#volunteerType;}
 
     set name(name){this.#name = name;}
     set email(email){this.#email = email;}
     set birthday(birthday){this.#birthday = birthday;}
     set gender(gender){this.#gender = gender;}
     set isVolunteer(isVolunteer){this.#isVolunteer = isVolunteer;}
+    set availability(availability){this.#availability = availability;}
+    set volunteerType(volunteerType){this.#volunteerType = volunteerType;}
 
     async authenticate(email, password){
         try{
@@ -69,7 +77,7 @@ class Member{
                     if (docSnap.exists()) {
                         const data = docSnap.data();
                 
-                        resolve(new Member(data.name, data.email, data.birthday.toDate(), data.gender, data.isVolunteer));
+                        resolve(new Member(data.name, data.email, data.birthday.toDate(), data.gender, data.isVolunteer, data.availability, data.volunteerType));
                     }else{
                         resolve(undefined);
                     }
@@ -110,7 +118,9 @@ class Member{
                 email: email,
                 gender: gender,
                 dob: Timestamp.fromDate(new Date(dob)),
-                isVolunteer: false
+                isVolunteer: false,
+                availability: "",
+                volunteerType: "",
             });
 
         }catch(e){
