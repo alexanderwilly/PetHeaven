@@ -102,12 +102,25 @@
     transition: 0.3s;
     text-decoration: none;
     color: #000814;
+    animation: slideUp 1s ease forwards;
+    opacity: 0;
 }
 
 .item-adopt:hover{
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border: 1px solid #000814;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(25%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .item-adopt > img{

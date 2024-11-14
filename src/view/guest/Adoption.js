@@ -146,8 +146,9 @@ const Adoption = () => {
                             (
                                 displayAnimalsArray.length > 0 ?  
                                 displayAnimalsArray.map((animal, index) => {
+                                    const animationDelay = `${index * 0.2}s`;
                                     return (
-                                        <Link key={index} className="item-adopt" to = '/PetHeaven/pet-info' state = {{id:animal.id}}>
+                                        <Link key={index} className="item-adopt" to = '/PetHeaven/pet-info' state = {{id:animal.id}} style={{ animationDelay }}>
                                             <img src={animal.image} alt={animal.name} />
                                             <span>{animal.name}</span>
                                         </Link>

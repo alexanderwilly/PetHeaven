@@ -70,7 +70,7 @@ const GuestPage = () =>{
             <section id = "help-us">
                 <h2>How You Can Help</h2>
                 <div className = "cards-container">
-                    <Link to = "/PetHeaven/adoption" className = "card">
+                    <Link to = "/PetHeaven/adoption" className = "card" >
                         <h3>
                             <img src = {adopt} alt = "adopt" />
                             ADOPT
@@ -80,7 +80,7 @@ const GuestPage = () =>{
                         </p>
                         <span><u>Learn More</u></span>
                     </Link>
-                    <Link to = "/PetHeaven/volunteer" className = "card">
+                    <Link to = "/PetHeaven/volunteer" className = "card" style={{ "animationDelay" : "0.2s"}}>
                         <h3>
                             <img src = {volunteer} alt = "volunteer" />
                             VOLUNTEER
@@ -90,7 +90,7 @@ const GuestPage = () =>{
                         </p>
                         <span><u>Learn More</u></span>
                     </Link>
-                    <Link to = "/PetHeaven/donate" className = "card">
+                    <Link to = "/PetHeaven/donate" className = "card" style={{ "animationDelay" : "0.4s"}}>
                         <h3>
                             <img src = {donate} alt = "donate" />
                             DONATE    
@@ -112,8 +112,9 @@ const GuestPage = () =>{
                             (
                                 animalsArray.length > 0 ? 
                                 animalsArray.map((animal, index) => {
+                                    const animationDelay = `${index * 0.2}s`;
                                     return (
-                                        <Link key={index} className="item-adopt" to = '/PetHeaven/pet-info' state = {{id:animal.id}}>
+                                        <Link key={index} className="item-adopt" to = '/PetHeaven/pet-info' state = {{id:animal.id}} style={{ animationDelay }}>
                                             <img src={animal.image} alt={animal.name} />
                                             <span>{animal.name}</span>
                                         </Link>
