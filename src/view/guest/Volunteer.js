@@ -27,7 +27,7 @@ const Volunteer = () => {
 
     const sign_up = () => {
         if(member !== undefined && member !== null){
-            toast.success("You are already signed in");
+            navigate("/PetHeaven/member/volunteer");
             return;
         }else{
             navigate("/PetHeaven/login");
