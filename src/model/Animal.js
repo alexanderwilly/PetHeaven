@@ -102,6 +102,17 @@ class Animal{
         }
     }
 
+    async adoptAnimalAppointment (id){
+        try{
+            const res = await axios.post('https://myfunc-uyqxhlp5gq-uc.a.run.app/animal/adoptAnimalAppointment', {id});
+            return res.data;
+
+        }catch(e){
+            throw new Error(e.response.data.error);
+            
+        }
+    }
+
     
 }
 

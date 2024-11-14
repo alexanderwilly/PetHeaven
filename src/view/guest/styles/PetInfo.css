@@ -70,6 +70,69 @@
     cursor: pointer;
 }
 
+/* Form */
+#adoption-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem
+}
+
+.adoption-form{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 2rem;
+    width: 85%;
+}
+
+.adoption-form > h1{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #003566;
+}
+
+
+
+.adoption-form h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: #003566;
+}
+
+.adoption-form label{
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: #000814;
+    font-weight: bold;
+}
+
+.adoption-form textarea{
+    height: 100px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #000814;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 90%;
+}
+
+.adoption-form input[type="date"]{
+    width: 25%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #000814;
+    border-radius: 5px;
+}
+
+.adoption-form label:last-of-type{
+    display: inline;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+
 @media (max-width:1025px){
     .img-container > img{
         width: 384px;
