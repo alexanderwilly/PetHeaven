@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PetHeaven/static/css/main.2bd1e75f.css",
-    "main.js": "/PetHeaven/static/js/main.aa05606f.js",
+    "main.css": "/PetHeaven/static/css/main.7a6689e0.css",
+    "main.js": "/PetHeaven/static/js/main.d76ad61a.js",
     "static/js/453.7780256c.chunk.js": "/PetHeaven/static/js/453.7780256c.chunk.js",
     "static/media/about_us.png": "/PetHeaven/static/media/about_us.d60294f1ad0fcc8ce7f6.png",
     "static/media/join-us.jpg": "/PetHeaven/static/media/join-us.d5b425f22536e5092ad7.jpg",
@@ -23,12 +23,12 @@
     "static/media/adoption_portal.png": "/PetHeaven/static/media/adoption_portal.e23d492a6a2d02156c7c.png",
     "static/media/cross_icon.png": "/PetHeaven/static/media/cross_icon.ebbe80983e5bb7ed2ef5.png",
     "index.html": "/PetHeaven/index.html",
-    "main.2bd1e75f.css.map": "/PetHeaven/static/css/main.2bd1e75f.css.map",
-    "main.aa05606f.js.map": "/PetHeaven/static/js/main.aa05606f.js.map",
+    "main.7a6689e0.css.map": "/PetHeaven/static/css/main.7a6689e0.css.map",
+    "main.d76ad61a.js.map": "/PetHeaven/static/js/main.d76ad61a.js.map",
     "453.7780256c.chunk.js.map": "/PetHeaven/static/js/453.7780256c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2bd1e75f.css",
-    "static/js/main.aa05606f.js"
+    "static/css/main.7a6689e0.css",
+    "static/js/main.d76ad61a.js"
   ]
 }
