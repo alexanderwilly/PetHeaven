@@ -56,13 +56,15 @@ const GuestPage = () =>{
         if(question){
             const answer = question.nextElementSibling;
             const img = question.querySelector('img');
-            if(answer.style.maxHeight === "1000px"){
+            if(answer.style.maxHeight === "0"){
+                
+                answer.style.maxHeight = "1000px";
+                img.style.transform = "rotate(0deg)";
+            }else{
+                
                 answer.style.maxHeight = "0";
                 img.style.transform = "rotate(-90deg)";
                 answer.style.animationDelay = "0s";
-            }else{
-                answer.style.maxHeight = "1000px";
-                img.style.transform = "rotate(0deg)";
             }
 
         }
