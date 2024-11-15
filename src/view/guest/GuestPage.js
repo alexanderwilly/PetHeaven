@@ -128,6 +128,14 @@ const GuestPage = () =>{
                 <Link className = "view-button" to = "/PetHeaven/adoption">VIEW ALL</Link>
             </section>
 
+            <section id = "caring-pet">
+                <h2>Caring for Your Pet</h2>
+                <div className = "caring-pet-video">
+                    <iframe src="https://www.youtube.com/embed/x2X4vRUb_y0?si=hI94FacKG7g7FwCO" title="How to Take Care of Pets" allow="autoplay;encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                </div>
+                
+            </section>
+
             <section id = "join-us">
                 <div className = "sign-up-text">
                     <h2>Join Us</h2>
