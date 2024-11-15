@@ -224,11 +224,84 @@
 
 #caring-pet iframe{
     width: 100%;
-    /* height: 512px; */
     height: 100%;
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* faq */
+.faq{
+    padding: 6vh 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;   
+    align-items: center;
+}
+
+.faq h2{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #003566;
+    margin-bottom: 1rem;
+
+}
+
+.questions{
+    border: 2px solid #003566;
+    background-color: #ffc300;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    width: 700px;
+}
+
+.question{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.question img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.question h3{
+    font-size: 1.5rem;
+}
+
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 2s ease;
+}
+
+.answer p{
+    width: 90%;
+    padding: 1rem 0;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    
+}
+
+.question > img{
+    transform: rotate(-90deg);
+    transition: all 0.3s ease;
+}
+
+.question h3{
+    font-size: 1.5rem;
+    color: #001d3d;
+}
+
+.answer p{
+    font-size: 1rem;
+    color: black;
 }
 
 /* join us section */
@@ -387,6 +460,17 @@ footer{
     .hero-text button{
         width: 200px;
         font-size: 1.25rem;
+    }
+    .questions{
+        max-width: 90%;
+    }
+
+    .question h3{
+        font-size: 1.1rem;
+    }
+
+    .answer p{
+        font-size: 0.75rem;
     }
 
 
