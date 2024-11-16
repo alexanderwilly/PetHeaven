@@ -117,7 +117,7 @@ class Member{
                 name: name,
                 email: email,
                 gender: gender,
-                dob: Timestamp.fromDate(new Date(dob)),
+                birthday: Timestamp.fromDate(new Date(dob)),
                 isVolunteer: false,
                 availability: "",
                 volunteerType: "",
