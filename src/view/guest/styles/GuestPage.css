@@ -256,13 +256,14 @@
     padding: 1rem 1.5rem;
     border-radius: 10px;
     width: 700px;
+    cursor: pointer;
 }
 
 .question{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    cursor: pointer;
+    
 }
 
 .question img{

@@ -52,10 +52,10 @@ const GuestPage = () =>{
     }
 
     const handleDropdownFAQ = (e) => {
-        const question = e.target.closest('.question');
-        if(question){
-            const answer = question.nextElementSibling;
-            const img = question.querySelector('img');
+        const questions = e.target.closest('.questions');
+        if(questions){
+            const answer = questions.querySelector('.answer');
+            const img = questions.querySelector('img');
             if(answer.style.maxHeight === "1000px"){
                 
                 
