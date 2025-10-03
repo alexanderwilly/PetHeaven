@@ -1,4 +1,6 @@
-import axios from 'axios';
+import { getDocs, collection, getDoc, doc, updateDoc } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage";
+import { db, storage } from "../firebase/firebaseConfig.js"
 
 class Animal{
     #id;
@@ -51,24 +53,33 @@ class Animal{
 
     async getAnimals(isHome){
         try{
-            const res = await axios.get('https://myfunc-uyqxhlp5gq-uc.a.run.app/animal/getAnimals');
+            const q = await getDocs(collection(db, "animals"));
             const animal = [];
             let a;
-            for (const doc of res.data.animals){
-                a = new Animal();
-                a.id = doc.id;
-                a.name = doc.name;
-                a.type = doc.type;
-                a.gender = doc.gender;
-                a.image = doc.image;
-                a.isAvailable = doc.isAvailable;
-                animal.push(a);
 
-                if(isHome){
-                    if(animal.length === 6){
-                        break;
+            for (const doc of q.docs){
+                const storageRef = ref(storage, doc.data().image);
+                const url = await getDownloadURL(storageRef);
+
+                if(doc.data().isAvailable){
+                    a = new Animal();
+                    a.id = doc.id;
+                    a.name = doc.data().name;
+                    a.type = doc.data().type;
+                    a.gender = doc.data().gender;
+                    a.image = url;
+                    a.isAvailable = doc.data().isAvailable;
+                    animal.push(a);
+                    if(isHome){
+                        if(animal.length === 6){
+                            break;
+                        }
                     }
+
                 }
+
+                
+                
             }
 
             return animal;
@@ -81,21 +92,35 @@ class Animal{
 
     async getAnimalById(id){
         try{
-            const res = await axios.get('https://myfunc-uyqxhlp5gq-uc.a.run.app/animal/getAnimalById', {params: {id}});
-            const doc = res.data;
+            const docRef = doc(db, 'animals', id);
+            const docSnap = await getDoc(docRef);
 
-            this.id = doc.id;
-            this.name = doc.name;
-            this.type = doc.type;
-            this.birthday = doc.birthday;
-            this.breed = doc.breed;
-            this.color = doc.color;
-            this.gender = doc.gender;
-            this.description = doc.description;
-            this.image = doc.image;
-            this.isAvailable = doc.isAvailable;
 
-            return this;
+            if(docSnap.exists()){
+                const storageRef = ref(storage, docSnap.data().image);
+                const url = await getDownloadURL(storageRef);
+
+                this.id = docSnap.id;
+                this.name = docSnap.data().name;
+                this.type = docSnap.data().type;
+                this.birthday = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Singapore', year: 'numeric', month: '2-digit', day: '2-digit' }).format(docSnap.data().birthday.toDate());
+                this.breed = docSnap.data().breed;
+                this.color = docSnap.data().color;
+                this.gender = docSnap.data().gender;
+                this.description = docSnap.data().description;
+                this.image = url;
+                this.isAvailable = docSnap.data().isAvailable;
+
+                return this;
+
+                
+
+
+            }else{
+                throw new Error("Animal not found");
+            }
+
+            
 
         }catch(e){
             throw new Error(e);
@@ -104,8 +129,23 @@ class Animal{
 
     async adoptAnimalAppointment (id){
         try{
-            const res = await axios.post('https://myfunc-uyqxhlp5gq-uc.a.run.app/animal/adoptAnimalAppointment', {id});
-            return res.data;
+
+            const docRef = doc(db, "animals", id);
+            const docSnap = await getDoc(docRef);
+
+            if(!docSnap.exists()){
+                throw new Error("Animal not found");
+            }   
+
+            if(!docSnap.data().isAvailable){
+                throw new Error("The selected animal is not available.");
+            }
+            
+            await updateDoc(docRef, {
+                isAvailable: false
+            });
+            
+
 
         }catch(e){
             throw new Error(e.response.data.error);
